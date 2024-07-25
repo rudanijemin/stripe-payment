@@ -68,7 +68,7 @@ const CartDetails = () => {
 
       // payment integration
       const makePayment = async()=>{
-        const stripe = await loadStripe("ENTER YOUR PUBLISHABLE KEY");
+        const stripe = await loadStripe("pk_test_51MsmzcSGHMsEdT1l64KonmXqE7ES8wGvwjYIJ6natQ3Y4oDjDeEneHHdkcXTX8jbdvf8yTzBXXxOivqJ4SmcbHEu006K8WBGW4");
 
         const body = {
             products:carts
@@ -174,7 +174,7 @@ const CartDetails = () => {
                                                 <th colSpan={3}>&nbsp;</th>
                                                 <th>Items In Cart <span className='ml-2 mr-2'>:</span><span className='text-danger'>{totalquantity}</span></th>
                                                 <th className='text-right'>Total Price<span className='ml-2 mr-2'>:</span><span className='text-danger'>₹ {totalprice}</span></th>
-                                                <th className='text-right'><button className='btn btn-success' o type='button'>Checkout</button></th>
+                                                <th className='text-right'><button className='btn btn-success' onClick={makePayment}  type='button'>Checkout</button></th>
                                             </tr>
                                         </tfoot>
                                     </table>
